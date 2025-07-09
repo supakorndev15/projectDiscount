@@ -183,7 +183,7 @@ extension ViewController {
     
     func showInvalidPriceAlert() {
         let alert = UIAlertController(
-            title: "❌ Invalid price input",
+            title: "Invalid price input",
             message: "กรุณาใส่ตัวเลขที่ถูกต้องในช่องราคา",
             preferredStyle: .alert
         )
