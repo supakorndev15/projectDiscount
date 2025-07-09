@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,14 +30,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akh-Fw-9aV">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-Go-LAg">
-                                                <rect key="frame" x="25" y="10.000000000000028" width="343" height="494.66666666666674"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-Go-LAg">
+                                                <rect key="frame" x="25" y="10" width="343" height="969.66666666666663"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Eb8-jb-wJs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายการสินค้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-zT-dYB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Eb8-jb-wJs">
+                                                        <rect key="frame" x="0.0" y="51.666666666666657" width="343" height="50"/>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp2-0o-mp8">
-                                                        <rect key="frame" x="0.0" y="80" width="343" height="34.333333333333343"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp2-0o-mp8">
+                                                        <rect key="frame" x="0.0" y="131.66666666666669" width="343" height="34.333333333333343"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="WMP-TB-qcl"/>
@@ -54,48 +61,113 @@
                                                             <action selector="dropdownTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="duB-QD-Ktg"/>
                                                         </connections>
                                                     </button>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fED-hs-YIn">
-                                                        <rect key="frame" x="0.0" y="144.33333333333331" width="343" height="236.33333333333331"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fED-hs-YIn">
+                                                        <rect key="frame" x="0.0" y="196" width="343" height="469"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ราคาสินค้า และส่วนลด" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-yN-H5V" userLabel="input">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.333333333333332"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ส่วนลด" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-yN-H5V" userLabel="input">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="21.666666666666668"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ราคาสินค้า (บาท)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ucs-vi-2LA">
-                                                                <rect key="frame" x="0.0" y="40.333333333333371" width="343" height="34"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon: Discount บาท หรือ %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0c-vE-oyh">
+                                                                <rect key="frame" x="0.0" y="41.666666666666686" width="343" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount : ระบุจำนวนส่วนลด บาท หรือ %" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t07-op-xuC">
+                                                                <rect key="frame" x="0.0" y="78.666666666666686" width="343" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ส่วนลด (บาท)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t07-op-xuC">
-                                                                <rect key="frame" x="0.0" y="94.333333333333371" width="343" height="34"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Top: Point" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnP-WC-s1q">
+                                                                <rect key="frame" x="0.0" y="132.66666666666669" width="343" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Point" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqU-QG-PKv">
+                                                                <rect key="frame" x="0.0" y="169.66666666666669" width="343" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="On Top ระบุ %" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jH6-hb-qwb">
-                                                                <rect key="frame" x="0.0" y="148.33333333333337" width="343" height="34"/>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-kc-OVS">
+                                                                <rect key="frame" x="0.0" y="213.66666666666663" width="343" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount : ส่วนลด (บาท)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ucs-vi-2LA">
+                                                                <rect key="frame" x="0.0" y="213.66666666666663" width="343" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seasonal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qN-6y-tdE">
-                                                                <rect key="frame" x="0.0" y="202.33333333333337" width="343" height="34"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Top:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zz-ur-HLx">
+                                                                <rect key="frame" x="0.0" y="223.66666666666663" width="343" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* (กรอกแลขไม่ใส่ %)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rh-2Z-Thm">
+                                                                <rect key="frame" x="0.0" y="260.66666666666663" width="343" height="13.333333333333314"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <color key="textColor" red="0.96065777539999997" green="0.21738755700000001" blue="0.28759697080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Percentage On Top ระบุ %" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jH6-hb-qwb">
+                                                                <rect key="frame" x="0.0" y="294" width="343" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seasonal Discount : Every Y THB,  Discount: X THB  (ทุกๆ Y บาท, จะลด X บาท)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7F-Wk-eDb">
+                                                                <rect key="frame" x="0.0" y="348" width="343" height="33.666666666666686"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*ใส่เครื่องหมาย , ระหว่างยอด (และติดกัน)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Y-Sd-EOR">
+                                                                <rect key="frame" x="0.0" y="401.66666666666663" width="343" height="13.333333333333314"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <color key="textColor" red="0.96065777539999997" green="0.21738755700000001" blue="0.28759697080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="กรอก Every Y THB,  Discount: X THB " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qN-6y-tdE">
+                                                                <rect key="frame" x="0.0" y="435" width="343" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J69-Pv-d7e">
-                                                        <rect key="frame" x="0.0" y="410.66666666666663" width="343" height="84"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J69-Pv-d7e">
+                                                        <rect key="frame" x="0.0" y="695" width="343" height="274.66666666666674"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sum value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSw-uC-z00">
-                                                                <rect key="frame" x="125.33333333333334" y="0.0" width="92.666666666666657" height="24"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ยอดก่อนลด: ฿" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6r-pR-fLu">
+                                                                <rect key="frame" x="120.33333333333334" y="0.0" width="102.66666666666666" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <color key="textColor" name="AccentColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ส่วนลด: ฿" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgr-7X-giv" userLabel="ส่วนลด: ฿">
+                                                                <rect key="frame" x="136.33333333333334" y="40.333333333333371" width="70.333333333333343" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ยอดรวมส่วนลด :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OM9-IW-Ik9">
+                                                                <rect key="frame" x="112.33333333333334" y="80.666666666666629" width="118.33333333333334" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSw-uC-z00">
+                                                                <rect key="frame" x="142" y="121.00000000000001" width="59.333333333333343" height="33.666666666666671"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                                 <color key="textColor" red="0.96065777539999997" green="0.21738755700000001" blue="0.28759697080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQ9-rT-bDO">
-                                                                <rect key="frame" x="81.666666666666686" y="44" width="180" height="40"/>
+                                                                <rect key="frame" x="81.666666666666686" y="174.66666666666663" width="180" height="40"/>
                                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Fw5-nP-MgX"/>
@@ -114,27 +186,39 @@
                                                                     <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0X-i2-MXN"/>
                                                                 </connections>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2s-Qe-NeY" userLabel="Clear All Discount">
+                                                                <rect key="frame" x="81.666666666666686" y="234.66666666666674" width="180" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="1ju-3W-SdW"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="Jus-tx-NBU"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Clear Discount">
+                                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GVS-yj-ncR"/>
+                                                                    <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JFd-iE-d2e"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNC-yr-13E">
-                                                <rect key="frame" x="15" y="1183" width="363" height="2"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="H9Y-fs-dPU"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="pgD-Go-LAg" secondAttribute="trailing" constant="25" id="41d-1Q-ejM"/>
-                                            <constraint firstItem="VNC-yr-13E" firstAttribute="leading" secondItem="akh-Fw-9aV" secondAttribute="leading" constant="15" id="9is-Ou-tZE"/>
-                                            <constraint firstAttribute="bottom" secondItem="VNC-yr-13E" secondAttribute="bottom" constant="15" id="XPl-xD-cd4"/>
-                                            <constraint firstItem="pgD-Go-LAg" firstAttribute="leading" secondItem="akh-Fw-9aV" secondAttribute="leading" constant="25" id="bFd-jE-VVd"/>
-                                            <constraint firstItem="pgD-Go-LAg" firstAttribute="top" secondItem="akh-Fw-9aV" secondAttribute="top" constant="10" id="q2h-Cr-MIb"/>
+                                            <constraint firstItem="pgD-Go-LAg" firstAttribute="top" secondItem="akh-Fw-9aV" secondAttribute="top" constant="10" id="8xt-rW-oUg"/>
+                                            <constraint firstAttribute="trailing" secondItem="pgD-Go-LAg" secondAttribute="trailing" constant="25" id="FFS-ov-QY0"/>
+                                            <constraint firstAttribute="bottom" secondItem="pgD-Go-LAg" secondAttribute="bottom" priority="1" constant="695.33333333333326" id="FWd-Yl-Rwf"/>
+                                            <constraint firstItem="pgD-Go-LAg" firstAttribute="leading" secondItem="akh-Fw-9aV" secondAttribute="leading" constant="25" id="SCG-36-xcY"/>
                                             <constraint firstAttribute="height" constant="1200" id="tlR-UI-6eK"/>
-                                            <constraint firstAttribute="trailing" secondItem="VNC-yr-13E" secondAttribute="trailing" constant="15" id="zNC-MV-uYg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -161,13 +245,18 @@
                     </view>
                     <size key="freeformSize" width="393" height="852"/>
                     <connections>
+                        <outlet property="calculateButton" destination="pQ9-rT-bDO" id="pLH-oA-Sju"/>
+                        <outlet property="clearButton" destination="d2s-Qe-NeY" id="JOL-ns-CxT"/>
+                        <outlet property="discountPriceLabel" destination="lgr-7X-giv" id="7dJ-g1-tyJ"/>
                         <outlet property="dropdownButton" destination="Gp2-0o-mp8" id="GcV-cr-zd1"/>
                         <outlet property="finalPriceLabel" destination="nSw-uC-z00" id="ysg-Go-ATq"/>
                         <outlet property="inputDiscountTextfield" destination="t07-op-xuC" id="tA3-FM-Scg"/>
                         <outlet property="inputOnTopTextfield" destination="jH6-hb-qwb" id="V6F-l2-37A"/>
+                        <outlet property="inputPointsTextfield" destination="hqU-QG-PKv" id="56f-eh-09e"/>
                         <outlet property="inputSeasonalTextfield" destination="9qN-6y-tdE" id="Jsh-6s-sZc"/>
                         <outlet property="inputTextfield" destination="Ucs-vi-2LA" id="RT4-wz-h3L"/>
                         <outlet property="labelStackView" destination="Eb8-jb-wJs" id="01g-q6-6Az"/>
+                        <outlet property="sumPriceLabel" destination="c6r-pR-fLu" id="Zib-Vl-f5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -177,14 +266,23 @@
     </scenes>
     <resources>
         <image name="logoPlay" width="813" height="283"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

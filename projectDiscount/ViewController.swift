@@ -4,30 +4,23 @@ import UIKit
 
 // Coupon > On Top > Seasonal
 class ViewController: UIViewController, UITextFieldDelegate {
-    
     let viewModel = DiscountViewModel()
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    let allItems: [Items] = [
-        Items(name: "T-Shirt", category: .clothing, price: 350),
-        Items(name: "Hat", category: .accessories, price: 250),
-        Items(name: "Hoodie", category: .clothing, price: 700),
-        Items(name: "Bag", category: .accessories, price: 640),
-        Items(name: "Belt", category: .accessories, price: 230)
-    ]
-    
     var selectedItems: [Items] = []
     
+    @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var dropdownButton: UIButton!
     @IBOutlet weak var labelStackView: UIStackView!
     
+    @IBOutlet weak var sumPriceLabel: UILabel!
+    @IBOutlet weak var discountPriceLabel: UILabel!
     @IBOutlet weak var finalPriceLabel: UILabel!
     
     @IBOutlet weak var inputTextfield: UITextField!
     @IBOutlet weak var inputDiscountTextfield: UITextField!
     @IBOutlet weak var inputOnTopTextfield: UITextField!
     @IBOutlet weak var inputSeasonalTextfield: UITextField!
+    @IBOutlet weak var inputPointsTextfield: UITextField!
+    @IBOutlet weak var clearButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         inputDiscountTextfield.delegate = self
         inputOnTopTextfield.delegate = self
         inputSeasonalTextfield.delegate = self
-        
+        inputPointsTextfield.delegate = self
         updateLabels()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -43,6 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func dropdownTapped(_ sender: UIButton) {
+        
         let alert = UIAlertController(title: "เลือกสินค้า", message: nil, preferredStyle: .actionSheet)
         
         for item in allItems {
@@ -102,48 +96,49 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateLabels()
     }
     
-    // แยกฟังก์ชันคำนวณออกมาใช้งานซ้ำได้
-    func updateFinalPrice() {
-        let final = viewModel.calculateFinalPrice()
-        finalPriceLabel.text = "Final: ฿\(String(format: "%.2f", final))"
-        print("Final: ฿\(String(format: "%.2f", final))")
-    }
     
-    @IBAction func addItemTapped(_ sender: UIButton) {
-        if let priceText = inputTextfield.text,
-           let price = Double(priceText) {
-            
-            let newItem = Items(name: "T-Shirt", category: .clothing, price: price)
-            viewModel.items.append(newItem)
-            
-            // คำนวณราคาใหม่
-            updateFinalPrice()
-            
-        } else {
-            // แสดงข้อความเตือนผู้ใช้
-            showInvalidPriceAlert()
-            print("❌ Invalid price input: กรุณาใส่ตัวเลข")
-        }
-    }
-    
+    // action เมื่อกด
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
         
         viewModel.items = selectedItems
-        
-        // เพิ่ม Discount จาก TextField ตามที่คุณใช้
         viewModel.discounts.removeAll()
         
-        if let discountText = inputDiscountTextfield.text,
-           let amount = Double(discountText) {
-            viewModel.discounts.append(.fixedCoupon(amount: amount))
+        // Coupon Discount (Fixed หรือ %)
+        if let discountText = inputDiscountTextfield.text, !discountText.isEmpty {
+            if discountText.contains("%") {
+                let numberOnly = discountText.replacingOccurrences(of: "%", with: "")
+                if let percent = Double(numberOnly) {
+                    // percentageCoupon คิดเป็น %
+                    viewModel.discounts.append(.percentageCoupon(percent: percent))
+                }
+            } else if let amount = Double(discountText) {
+                // เป็จจำนวณเต็ม 
+                viewModel.discounts.append(.fixedCoupon(amount: amount))
+            }
         }
-        
+
+        // On Top Discount (Clothing only)
+        // ลดแค่กลุ่ม clothing
         if let onTopText = inputOnTopTextfield.text,
            let percent = Double(onTopText) {
+            // อยากลด กลุ่มไหน แก้ที่  category .
             viewModel.discounts.append(.categoryOnTop(category: .clothing, percent: percent))
         }
+
+        // Points Discount (1 point = 1 THB, capped at 20%)
+        if let pointText = inputPointsTextfield.text,
+           let points = Int(pointText) {
+            // ส่ง points เข้าไป Check ใน pointOnTop
+            viewModel.discounts.append(.pointOnTop(point: points))
+        }
+        
+//        Seasonal Discount (เช่น 300,40)
+//        * Every X THB บาท
+//        * Discount Y THB บาท
+//        Discount: 40 THB at every 300 THB Total Price: 750
         
         if let seasonalText = inputSeasonalTextfield.text {
+            // split จาก คอมม่า
             let parts = seasonalText.split(separator: ",")
             if parts.count == 2,
                let every = Double(parts[0]),
@@ -151,49 +146,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 viewModel.discounts.append(.seasonalDiscount(every: every, discount: discount))
             }
         }
+
+        // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        // ค่าที่ได้ไป แสดงใน Label
+        updateFinalPrice()
+    }
+
+    
+    // แยกฟังก์ชันคำนวณออกมาใช้งานซ้ำได้
+    func updateFinalPrice() {
+        
+        let sumTotalBefore = viewModel.calculateTotalBeforeDiscount()
+        sumPriceLabel.text = "ยอดก่อนลด: ฿\(String(format: "%.2f", sumTotalBefore))"
+        print("sum : ฿\(String(format: "%.2f", sumTotalBefore))")
         
         let final = viewModel.calculateFinalPrice()
-        finalPriceLabel.text = "Final: ฿\(String(format: "%.2f", final))"
-        //        viewModel.items.removeAll()
-        //        viewModel.discounts.removeAll()
-        //
-        //        // รับราคา
-        //        if let priceText = inputTextfield.text,
-        //           let price = Double(priceText) {
-        //
-        //            let newItem = Items(name: "T-Shirt", category: .clothing, price: price)
-        //            viewModel.items.append(newItem)
-        //
-        //        } else {
-        //            showAlert(title: "❌ ใส่ราคาสินค้าไม่ถูกต้อง", message: "กรุณาใส่ตัวเลข")
-        //            return
-        //        }
-        //
-        //        // รับ Fixed Discount
-        //        if let discountText = inputDiscountTextfield.text,
-        //           let discountAmount = Double(discountText) {
-        //            viewModel.discounts.append(.fixedCoupon(amount: discountAmount))
-        //        }
-        //
-        //        // รับ On Top (%)
-        //        if let onTopText = inputOnTopTextfield.text,
-        //           let onTopPercent = Double(onTopText) {
-        //            viewModel.discounts.append(.categoryOnTop(category: .clothing, percent: onTopPercent))
-        //        }
-        //
-        //        // รับ Seasonal (เช่น 300,40)
-        //        if let seasonalText = inputSeasonalTextfield.text {
-        //            let parts = seasonalText.split(separator: ",")
-        //            if parts.count == 2,
-        //               let every = Double(parts[0]),
-        //               let discount = Double(parts[1]) {
-        //                viewModel.discounts.append(.seasonalDiscount(every: every, discount: discount))
-        //            }
-        //        }
-        //
-        //        // คำนวณและแสดงผล
-        //        let final = viewModel.calculateFinalPrice()
-        //        finalPriceLabel.text = "ราคาหลังหักส่วนลดทั้งหมด: ฿\(String(format: "%.2f", final))"
+        finalPriceLabel.text = "฿\(String(format: "%.2f", final))"
+        
+        discountPriceLabel.text = ("ส่วนลด: ฿\(String(format: "%.2f", sumTotalBefore - final))")
+        
+        print("ราคาและส่วนลด: ฿\(String(format: "%.2f", final))")
+    }
+    
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        clearDiscountTextField()
     }
 }
 
@@ -224,4 +200,16 @@ extension ViewController {
         return true
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        clearDiscountTextField()
+    }
+    
+    func clearDiscountTextField() {
+        inputTextfield.text = ""
+        inputDiscountTextfield.text = ""
+        inputOnTopTextfield.text = ""
+        inputSeasonalTextfield.text = ""
+        inputPointsTextfield.text = ""
+    }
+
 }
