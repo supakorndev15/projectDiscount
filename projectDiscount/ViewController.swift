@@ -1,10 +1,8 @@
 //
 //  ViewController.swift
 //  projectDiscount
-//
-//  Created by MacDetail on 3/7/2568 BE.
-//
 
+// test 
 import UIKit
 
 class ViewController: UIViewController {
