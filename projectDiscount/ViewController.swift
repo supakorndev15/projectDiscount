@@ -2,7 +2,6 @@
 //  ViewController.swift
 //  projectDiscount
 
-// test 
 import UIKit
 
 class ViewController: UIViewController {

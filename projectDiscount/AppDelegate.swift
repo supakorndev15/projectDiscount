@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  projectDiscount
 //
-//  Created by MacDetail on 3/7/2568 BE.
-//
 
 import UIKit
 
