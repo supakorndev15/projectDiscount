@@ -12,3 +12,4 @@ enum ItemCategory: String {
     case accessories
     case electronics
 }
+
