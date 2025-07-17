@@ -19,6 +19,17 @@
 		A87164722E16E5B400E644A0 /* projectDiscountUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87164712E16E5B400E644A0 /* projectDiscountUITests.swift */; };
 		A87164742E16E5B400E644A0 /* projectDiscountUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87164732E16E5B400E644A0 /* projectDiscountUITestsLaunchTests.swift */; };
 		A87164832E16E91200E644A0 /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87164822E16E91200E644A0 /* Discount.swift */; };
+		A8A4E2FD2E28A12600E71A9F /* BasicCleanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E2F72E28A12600E71A9F /* BasicCleanPresenter.swift */; };
+		A8A4E2FE2E28A12600E71A9F /* BasicCleanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E2F82E28A12600E71A9F /* BasicCleanWorker.swift */; };
+		A8A4E2FF2E28A12600E71A9F /* BasicCleanRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E2F92E28A12600E71A9F /* BasicCleanRouter.swift */; };
+		A8A4E3002E28A12600E71A9F /* BasicCleanModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E2FA2E28A12600E71A9F /* BasicCleanModels.swift */; };
+		A8A4E3012E28A12600E71A9F /* BasicCleanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E2FB2E28A12600E71A9F /* BasicCleanViewController.swift */; };
+		A8A4E3022E28A12600E71A9F /* BasicCleanInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E2FC2E28A12600E71A9F /* BasicCleanInteractor.swift */; };
+		A8A4E3042E28ADD600E71A9F /* BasicCleanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A4E3032E28ADD600E71A9F /* BasicCleanStoryboard.storyboard */; };
+		A8A4E3082E28B50F00E71A9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E3072E28B50F00E71A9F /* User.swift */; };
+		A8A4E30A2E28B53A00E71A9F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E3092E28B53A00E71A9F /* UserViewModel.swift */; };
+		A8A4E30D2E28B5C800E71A9F /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4E30C2E28B5C800E71A9F /* UserViewController.swift */; };
+		A8A4E30F2E28B63A00E71A9F /* UserStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A4E30E2E28B63A00E71A9F /* UserStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +66,17 @@
 		A87164712E16E5B400E644A0 /* projectDiscountUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectDiscountUITests.swift; sourceTree = "<group>"; };
 		A87164732E16E5B400E644A0 /* projectDiscountUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectDiscountUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A87164822E16E91200E644A0 /* Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discount.swift; sourceTree = "<group>"; };
+		A8A4E2F72E28A12600E71A9F /* BasicCleanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicCleanPresenter.swift; path = StartBasicClean/BasicCleanPresenter.swift; sourceTree = "<group>"; };
+		A8A4E2F82E28A12600E71A9F /* BasicCleanWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicCleanWorker.swift; path = StartBasicClean/BasicCleanWorker.swift; sourceTree = "<group>"; };
+		A8A4E2F92E28A12600E71A9F /* BasicCleanRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicCleanRouter.swift; path = StartBasicClean/BasicCleanRouter.swift; sourceTree = "<group>"; };
+		A8A4E2FA2E28A12600E71A9F /* BasicCleanModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicCleanModels.swift; path = StartBasicClean/BasicCleanModels.swift; sourceTree = "<group>"; };
+		A8A4E2FB2E28A12600E71A9F /* BasicCleanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicCleanViewController.swift; path = StartBasicClean/BasicCleanViewController.swift; sourceTree = "<group>"; };
+		A8A4E2FC2E28A12600E71A9F /* BasicCleanInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicCleanInteractor.swift; path = StartBasicClean/BasicCleanInteractor.swift; sourceTree = "<group>"; };
+		A8A4E3032E28ADD600E71A9F /* BasicCleanStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasicCleanStoryboard.storyboard; sourceTree = "<group>"; };
+		A8A4E3072E28B50F00E71A9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8A4E3092E28B53A00E71A9F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		A8A4E30C2E28B5C800E71A9F /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		A8A4E30E2E28B63A00E71A9F /* UserStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +135,8 @@
 		A871644F2E16E5AC00E644A0 /* projectDiscount */ = {
 			isa = PBXGroup;
 			children = (
+				A8A4E3052E28B42B00E71A9F /* MVVM Basic Swift */,
+				A8A4E2F62E28A0DA00E71A9F /* CleanSwiftLearn */,
 				A8635BCB2E1E304E006BF469 /* ViewModel */,
 				A87164802E16E8A400E644A0 /* Model */,
 				A87164502E16E5AC00E644A0 /* AppDelegate.swift */,
@@ -150,6 +174,47 @@
 				A8635BC92E1E2AD5006BF469 /* Item.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A8A4E2F62E28A0DA00E71A9F /* CleanSwiftLearn */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4E2F72E28A12600E71A9F /* BasicCleanPresenter.swift */,
+				A8A4E2F82E28A12600E71A9F /* BasicCleanWorker.swift */,
+				A8A4E2F92E28A12600E71A9F /* BasicCleanRouter.swift */,
+				A8A4E2FA2E28A12600E71A9F /* BasicCleanModels.swift */,
+				A8A4E2FB2E28A12600E71A9F /* BasicCleanViewController.swift */,
+				A8A4E2FC2E28A12600E71A9F /* BasicCleanInteractor.swift */,
+				A8A4E3032E28ADD600E71A9F /* BasicCleanStoryboard.storyboard */,
+			);
+			path = CleanSwiftLearn;
+			sourceTree = "<group>";
+		};
+		A8A4E3052E28B42B00E71A9F /* MVVM Basic Swift */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4E30B2E28B5BA00E71A9F /* view */,
+				A8A4E3062E28B4F700E71A9F /* model */,
+			);
+			path = "MVVM Basic Swift";
+			sourceTree = "<group>";
+		};
+		A8A4E3062E28B4F700E71A9F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4E3072E28B50F00E71A9F /* User.swift */,
+				A8A4E3092E28B53A00E71A9F /* UserViewModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A8A4E30B2E28B5BA00E71A9F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4E30C2E28B5C800E71A9F /* UserViewController.swift */,
+				A8A4E30E2E28B63A00E71A9F /* UserStoryboard.storyboard */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +321,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A4E3042E28ADD600E71A9F /* BasicCleanStoryboard.storyboard in Resources */,
 				A871645D2E16E5B300E644A0 /* LaunchScreen.storyboard in Resources */,
 				A871645A2E16E5B300E644A0 /* Assets.xcassets in Resources */,
+				A8A4E30F2E28B63A00E71A9F /* UserStoryboard.storyboard in Resources */,
 				A87164582E16E5AC00E644A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,10 +350,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A4E3082E28B50F00E71A9F /* User.swift in Sources */,
+				A8A4E30D2E28B5C800E71A9F /* UserViewController.swift in Sources */,
+				A8A4E2FE2E28A12600E71A9F /* BasicCleanWorker.swift in Sources */,
 				A8635BCA2E1E2AD5006BF469 /* Item.swift in Sources */,
 				A87164832E16E91200E644A0 /* Discount.swift in Sources */,
 				A87164552E16E5AC00E644A0 /* ViewController.swift in Sources */,
+				A8A4E30A2E28B53A00E71A9F /* UserViewModel.swift in Sources */,
+				A8A4E3002E28A12600E71A9F /* BasicCleanModels.swift in Sources */,
+				A8A4E3012E28A12600E71A9F /* BasicCleanViewController.swift in Sources */,
+				A8A4E2FF2E28A12600E71A9F /* BasicCleanRouter.swift in Sources */,
 				A87164512E16E5AC00E644A0 /* AppDelegate.swift in Sources */,
+				A8A4E2FD2E28A12600E71A9F /* BasicCleanPresenter.swift in Sources */,
+				A8A4E3022E28A12600E71A9F /* BasicCleanInteractor.swift in Sources */,
 				A87164532E16E5AC00E644A0 /* SceneDelegate.swift in Sources */,
 				A8635BCD2E1E3060006BF469 /* DiscountViewModel.swift in Sources */,
 			);

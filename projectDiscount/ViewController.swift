@@ -171,6 +171,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func clearButtonTapped(_ sender: Any) {
         clearDiscountTextField()
     }
+    
+    @IBAction func btnCleanSwift(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "BasicCleanStoryboard", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "BasicCleanViewController") as! BasicCleanViewController
+
+        if let nav = self.navigationController {
+            // ถ้ามี Navigation Controller อยู่แล้ว ก็ push ได้เลย
+            nav.pushViewController(destinationVC, animated: true)
+        } else {
+            // ถ้าไม่มี Navigation Controller ก็สร้าง Navigation Controller ขึ้นมาใหม่ แล้ว present
+            let navController = UINavigationController(rootViewController: destinationVC)
+            self.present(navController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func btnMVVM(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "UserStoryboard", bundle: nil)
+        if let userVC = storyboard.instantiateViewController(withIdentifier: "UserViewController") as? UserViewController {
+            userVC.viewModel = UserViewModel(
+                user: User(name: "Supakorn")
+            )
+            
+            navigationController?.pushViewController(userVC, animated: true)
+            // เคลียร์ stack แล้วตั้ง UserViewController เป็น root เลย
+//                navigationController?.setViewControllers([userVC], animated: true)
+        }
+    }
+    
 }
 
 extension ViewController {
