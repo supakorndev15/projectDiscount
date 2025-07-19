@@ -1,0 +1,34 @@
+PODS:
+  - Kingfisher (8.5.0)
+  - ObjectMapper (4.4.2)
+  - RxCocoa (6.9.0):
+    - RxRelay (= 6.9.0)
+    - RxSwift (= 6.9.0)
+  - RxRelay (6.9.0):
+    - RxSwift (= 6.9.0)
+  - RxSwift (6.9.0)
+
+DEPENDENCIES:
+  - Kingfisher (~> 8.5)
+  - ObjectMapper (~> 4.4)
+  - RxCocoa (~> 6.9)
+  - RxSwift (~> 6.9)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - ObjectMapper
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Kingfisher: ff0d31a1f07bdff6a1ebb3ba08b8e6e567b6500c
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
+  RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
+  RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
+
+PODFILE CHECKSUM: 20ff9856ffb214e3f668daf0219ad5f9691f5b3d
+
+COCOAPODS: 1.16.2
